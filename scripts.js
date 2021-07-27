@@ -1,22 +1,44 @@
-let images = document.querySelectorAll('img');
+let imageIndex = 1;
 const nextButton = document.getElementById('next');
-const previousButton = document.getElementById('previous');
-let currentImage = document.getElementsByClassName('active');
-let firstSlide = document.getElementById('slide-1');
+const prevButton = document.getElementById('previous');
 
 
-// previousButton.addEventListener('click', function(){
-// if(previousButton.style.backgroundColor !== 'red' ){
-//   previousButton.style.backgroundColor = 'red';
-// } else {
-//   previousButton.style.backgroundColor = 'black';
-// }
-// });
+// main logic - determines visible image
 
-previousButton.addEventListener('click', ()=>{
-firstSlide.classList.remove('active');
-images[2].classList.add('active');
+function visibleSlide(n){
+  let slides = document.querySelectorAll('img');
+  if(n > slides.length){
+    imageIndex = 1;
+  }
+  if(n < 1){
+    imageIndex = slides.length
+  }
+  for(i = 0; i< slides.length; i++){
+    slides[i].style.display = "none";
+  }
+  slides[imageIndex-1].style.display = "block";
+}
 
+// next/prev button control - simulates triggering control of viewed slide
 
+function selectSlide(n){
+  visibleSlide(imageIndex += n);
+}
 
+nextButton.addEventListener('click', ()=>{
+  selectSlide(1);
 });
+prevButton.addEventListener('click', ()=>{
+  selectSlide(-1);
+});
+
+
+
+
+
+
+
+
+
+
+

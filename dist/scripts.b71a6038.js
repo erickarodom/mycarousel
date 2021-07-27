@@ -118,21 +118,38 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"scripts.js":[function(require,module,exports) {
-var images = document.querySelectorAll('img');
+var imageIndex = 1;
 var nextButton = document.getElementById('next');
-var previousButton = document.getElementById('previous');
-var currentImage = document.getElementsByClassName('active');
-var firstSlide = document.getElementById('slide-1'); // previousButton.addEventListener('click', function(){
-// if(previousButton.style.backgroundColor !== 'red' ){
-//   previousButton.style.backgroundColor = 'red';
-// } else {
-//   previousButton.style.backgroundColor = 'black';
-// }
-// });
+var prevButton = document.getElementById('previous'); // main logic - determines visible image
 
-previousButton.addEventListener('click', function () {
-  firstSlide.classList.remove('active');
-  images[2].classList.add('active');
+function visibleSlide(n) {
+  var slides = document.querySelectorAll('img');
+
+  if (n > slides.length) {
+    imageIndex = 1;
+  }
+
+  if (n < 1) {
+    imageIndex = slides.length;
+  }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slides[imageIndex - 1].style.display = "block";
+} // next/prev button control - simulates triggering control of viewed slide
+
+
+function selectSlide(n) {
+  visibleSlide(imageIndex += n);
+}
+
+nextButton.addEventListener('click', function () {
+  selectSlide(1);
+});
+prevButton.addEventListener('click', function () {
+  selectSlide(-1);
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -162,7 +179,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55889" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60911" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,0 +1,15 @@
+{
+  "name": "mycarousel",
+  "version": "1.0.0",
+  "description": "build simple photo slider",
+  "main": "scripts.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html --open"
+  },
+  "author": "ericka r odom",
+  "license": "ISC",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}

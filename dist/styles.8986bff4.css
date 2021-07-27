@@ -13,18 +13,24 @@ body {
   body {
     background-color: black;
   }
-}
-.slider-sect-ctnr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media screen and (max-width: 1000px) {
+  h1 {
+    color: white;
+  }
   .slider-sect-ctnr {
     background-color: white;
     padding: 40px 10px;
     border-radius: 10px;
   }
+}
+h1 {
+  text-align: center;
+  padding-bottom: 1em;
+  letter-spacing: 0.09em;
+}
+.slider-sect-ctnr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .slides {

@@ -137,6 +137,7 @@ function visibleSlide(n) {
     slides[i].style.display = "none";
   }
 
+  console.log(imageIndex);
   slides[imageIndex - 1].style.display = "block";
 } // next/prev button control - simulates triggering control of viewed slide
 
@@ -179,7 +180,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49971" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58725" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

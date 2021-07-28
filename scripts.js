@@ -15,7 +15,9 @@ function visibleSlide(n){
   }
   for(i = 0; i< slides.length; i++){
     slides[i].style.display = "none";
+   
   }
+  console.log(imageIndex);
   slides[imageIndex-1].style.display = "block";
 }
 
@@ -24,12 +26,9 @@ function visibleSlide(n){
 function selectSlide(n){
   visibleSlide(imageIndex += n);
 }
-
-nextButton.addEventListener('click', ()=>{
-  selectSlide(1);
+nextButton.addEventListener('click',()=>{selectSlide(1); 
 });
-prevButton.addEventListener('click', ()=>{
-  selectSlide(-1);
+prevButton.addEventListener('click',()=>{selectSlide(-1);
 });
 
 

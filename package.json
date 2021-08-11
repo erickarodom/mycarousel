@@ -5,7 +5,8 @@
   "main": "scripts.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel index.html --open"
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "author": "ericka r odom",
   "license": "ISC",

@@ -1,4 +1,4 @@
-# My JavaScript Image Slider
+# [My JavaScript Image Slider](https://brave-meninsky-51c722.netlify.app/)
 Building an image slider is a great place to start when learning vanilla javascript.
 It is about on the same level as a ToDo list and when you are first learning the DOM and 
 trying to get your head around some logic it seems hard and confusing.  We all start with these
